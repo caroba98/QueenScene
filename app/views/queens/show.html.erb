@@ -4,7 +4,14 @@
 <p><strong>Price:</strong> <%= @queen.price %></p>
 <p><strong>Skills:</strong> <%= @queen.skills %></p>
 
-<%= link_to "Book this Queen", "here comes the new queen booking path", class: "btn btn-primary" %><br>
+
+<%= simple_form_for [@queen, @booking] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :location %>
+  <%= f.button :submit, "Book this Queen", class: "button btn-primary" %><br>
+<% end %>
+
+
 <p>Want to edit your profile?</p>
 <%= link_to 'Edit Profile', edit_queen_path(@queen), class: 'btn btn-primary' %><br>
 <%= link_to 'Back to Index', queens_path %>
