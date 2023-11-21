@@ -1,0 +1,15 @@
+<h1>Create Your Fabulous and Fierce Profile</h1>
+
+<%= simple_form_for @queen do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+<%# dropdown: %>
+  <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Select a Skill" %>
+
+<%# checklist: %>
+<%# <%= f.input :skills, as: :check_boxes, collection: Queen::SKILLSET, label_method: :capitalize, value_method: :downcase, include_hidden: false %>
+  <%= f.button :submit, "Create Profile", class: "button btn-primary" %><br>
+    <%= link_to 'Back to Index', queens_path %>
+
+<% end %>
