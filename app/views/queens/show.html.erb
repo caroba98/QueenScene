@@ -5,4 +5,6 @@
 <p><strong>Skills:</strong> <%= @queen.skills %></p>
 
 <%= link_to "Book this Queen", "here comes the new queen booking path", class: "btn btn-primary" %><br>
+<p>Want to edit your profile?</p>
+<%= link_to 'Edit Profile', edit_queen_path(@queen), class: 'btn btn-primary' %><br>
 <%= link_to 'Back to Index', queens_path %>
