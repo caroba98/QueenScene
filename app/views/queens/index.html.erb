@@ -1,4 +1,4 @@
 <h1>Queens</h1>
 <% @queens.each do |queen| %>
-  <%= queen.name %>
+  <%= link_to queen.name, queen_path(queen) %><br>
 <% end %>
