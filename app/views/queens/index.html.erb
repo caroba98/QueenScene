@@ -1,4 +1,5 @@
 <h1>Queens</h1>
+<%= link_to 'Are you a Drag Queen? Create New Profile', new_queen_path, class: 'btn btn-primary' %><br>
 <% @queens.each do |queen| %>
-  <%= queen.name %>
+  <%= link_to queen.name, queen_path(queen) %><br>
 <% end %>
