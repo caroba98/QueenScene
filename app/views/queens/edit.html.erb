@@ -1,0 +1,16 @@
+<h1>Edit your gorgeous profile</h1><br>
+<%= link_to 'Back to Profile', queen_path(@queen), class: 'btn btn-secondary' %>
+
+<%= simple_form_for @queen do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%
+=begin%>
+ <%= f.input :skills, as: :check_boxes, collection: Queen::SKILLSET, label_method: :capitalize, value_method: :downcase, include_hidden: false %>
+<%
+=end%>
+  <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Select a Skill" %>
+
+  <%= f.button :submit, "you better update your Profile, Bitch!", class: 'btn btn-primary'  %>
+<% end %>
