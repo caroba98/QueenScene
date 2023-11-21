@@ -1,0 +1,46 @@
+.queen-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    .card {
+        width: 300px; // You can adjust the width
+        margin: 10px;
+        border-radius: 10px; // Elegant, modern border-radius
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // subtle shadow for depth
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.05); // Slightly grow on hover for effect
+        }
+        a {
+            // Targeting links inside the card
+            text-decoration: none; // Removes the underline from links
+            &:hover {
+                text-decoration: none; // Ensures underline doesn't appear on hover
+            }
+        }
+        .card-img-top {
+            width: 100%;
+            height: 200px; // Adjust as necessary
+            object-fit: cover;
+            border-top-left-radius: 10px; // Keep the radius consistent
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 15px;
+            .card-title,
+            .card-detail {
+                margin-bottom: 10px;
+                color: black; // Change the color as needed
+                text-decoration: none; // Removes underline from text
+                &:hover {
+                    color: black; // Ensures the color remains the same on hover
+                }
+            }
+            .card-detail {
+                margin-right: 10px; // Adjust as needed for alignment
+                text-align: right; // Aligns text to the right
+            }
+        }
+    }
+}
