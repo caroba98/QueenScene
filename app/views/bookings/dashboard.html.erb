@@ -1,7 +1,29 @@
-<h1>Your Dashboard</h1>
-<h2>Your Bookings</h2>
-<% @bookings.each do |booking|%>
-<p><%= booking.date%></p>
-<p><%= booking.location%></p>
-<p><%= booking.status%></p>
-<% end %>
+<div class="dashboard">
+  <h1 class="text-center">Hi, <%= @user.email %>! </h1>
+  <h2 class="text-center">Welcome to your Dashboard </h1>
+  <p class="text-center">Here you have an overview of all you upcoming events: </p>
+
+
+  <div class="card-db">
+    <h2 class="card-title">View your Bookings</h2>
+    <% @bookings.each do |booking|%>
+      <div class="booking-card">
+        <div class="card-body">
+          <h5 class="card-title">Booking 1</h5>
+          <p class="card-text">Date: <%= booking.date%></p>
+          <p class="card-text">Location: <%= booking.location%></p>
+          <p class="card-text">Status: <%= booking.status%></p>
+        </div>
+      </div>
+    <% end %>
+
+    <h2>Your Queen Profile</h2>
+    <% @queens.each do | queen | %>
+      <%= render "card", queen: queen%>
+      <a href="#" class="edit-link">Edit</a>
+    <% end %>
+
+
+  </div>
+
+</div>

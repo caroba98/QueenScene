@@ -64,3 +64,11 @@
         }
     }
 }
+
+.card-form {
+  max-height: 300px;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to left top, #E70A74, #f7c5e1);
+}
