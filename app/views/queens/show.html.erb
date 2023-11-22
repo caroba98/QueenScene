@@ -1,17 +1,41 @@
+<div class="container mt-3">
+  <h2><b><%= @queen.name %></b></h2>
+  <%= render "slider" %>
+  <div class="row mt-2 me-1 mb-5">
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <h4>Bio:</h4>
+      <p><%= @queen.bio %></p>
+      <div class="d-flex justify-content-between me-3">
+        <p><strong><%= @queen.location %></strong></p>
+        <p><strong><i class="fa-solid fa-tag"></i> <%= @queen.price %>€/hour</strong></p>
+      </div>
+      <p><strong>Skills:</strong></p>
+      <% if @queen.skills == "dancing" %>
+      <p><%= "🪩 #{@queen.skills}"  %></p>
+      <% elsif @queen.skills == "singing" %>
+      <p><%= "🎵 #{@queen.skills}"  %></p>
+      <% elsif @queen.skills == "lipsync" %>
+      <p><%= "🎤 #{@queen.skills}"  %></p>
+      <% elsif @queen.skills == "comedy" %>
+      <p><%= "😂 #{@queen.skills}"  %></p>
+      <% elsif @queen.skills == "looks" %>
+      <p><%= "💅 #{@queen.skills}"  %></p>
+      <% end %>
+    </div>
 
-<h2><b><%= @queen.name %></b></h2>
-<p><strong>Location:</strong> <%= @queen.location %></p>
-<p><strong>Price:</strong> <%= @queen.price %></p>
-<p><strong>Skills:</strong> <%= @queen.skills %></p>
+    <div class="card-form col-lg-4 col-md-4 col-sm-12 p-3">
+      <h4>Book this Queen!</h4>
+      <%= simple_form_for [@queen, @booking] do |f| %>
+        <%= f.input :date,
+                  as: :string,
+                  input_html: { data: { controller: "datepicker" } } %>
+        <%= f.input :location %>
+        <%= f.button :submit, "Book this Queen", class: "button-75" %><br>
+      <% end %>
+    </div>
+  </div>
+
+<button class="button-75" role="button"><%= link_to ('<i class="fa-solid fa-arrow-left"></i> Back').html_safe, queens_path, class: "button_link" %></button>
 
 
-<%= simple_form_for [@queen, @booking] do |f| %>
-  <%= f.input :date %>
-  <%= f.input :location %>
-  <%= f.button :submit, "Book this Queen", class: "button btn-primary" %><br>
-<% end %>
-
-
-<p>Want to edit your profile?</p>
-<%= link_to 'Edit Profile', edit_queen_path(@queen), class: 'btn btn-primary' %><br>
-<%= link_to 'Back to Index', queens_path %>
+</div>
