@@ -1,40 +1,21 @@
-<%
-=begin%>
- <h1>Queens</h1>
-<%= link_to 'Are you a Drag Queen? Create New Profile', new_queen_path, class: 'btn btn-primary' %><br>
 
-<% @queens.each do |queen| %>
-  <%= link_to queen.name, queen %><br>
+<h1 class="text-center">Find the perfect Drag Queen for your event!</h1><br>
+
+<%= simple_form_for :search, url: queens_path, method: :get, html: { class: 'search-form' } do |f| %>
+  <div class="search-fields">
+    <%= f.input :location, as: :string, label: false, placeholder: 'Location', input_html: { class: 'form-control' } %>
+    <%= f.input :date, as: :string, label: false, placeholder: 'Date', input_html: { class: 'form-control', type: 'date' } %>
+    <%= f.input :skills, label: false, collection: Queen::SKILLSET, input_html: { class: 'form-control', multiple: false }, prompt: 'Select skill' %>
+  </div>
+  <%= f.button :submit, 'SEARCH', class: 'btn btn-search' %>
 <% end %>
-<%
-=end%>
 
-<h1 class="text-center">Queens</h1>
-<div class="button-container">
-<%= link_to 'Are you a Drag Queen? Create New Profile', new_queen_path, class: 'btn btn-primary mb-3' %>
+<div class="d-grid gap-2 col-4 mx-auto">
+<%= link_to "Or create New Profile", new_queen_path, class: "btn btn-primary mb-3" %>
 </div>
+
 <div class="queen-cards">
   <% @queens.each do |queen| %>
-    <div class="card">
-      <%= link_to queen_path(queen) do %>
-      <%= image_tag "https://source.unsplash.com/random/300x300?sig=#{queen.id}", alt: "#{queen.name}'s photo", class: "card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= queen.name %></h5>
-          <h6 class="card-detail"><i class="fa-solid fa-location-dot"></i> <%= queen.location %></h6>
-          <h6 class="card-detail"><%= queen.price %> <b>$</b></h6>
-          <%
-=begin%>
- <h6 class="card-detail"><%= queen.skills %></h6>
-<%
-=end%>
-          <div class="card-skills">
-            <% queen.skills.split(',').each do |skill| %>
-              <span class="badge bg-secondary"><%= skill %></span>
-            <% end %>
-          </div>
-
-        </div>
-      <% end %>
-    </div>
+<%=render "card", queen: queen %>
   <% end %>
 </div>
