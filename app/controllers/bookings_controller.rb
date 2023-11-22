@@ -1,7 +1,9 @@
 class BookingsController < ApplicationController
 
   def dashboard
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
+    @queens = Queen.where(user: current_user)
+    @user = current_user
   end
 
   def create
