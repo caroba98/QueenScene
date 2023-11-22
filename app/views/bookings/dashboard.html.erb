@@ -20,7 +20,8 @@
     <h2>Your Queen Profile</h2>
     <% @queens.each do | queen | %>
       <%= render "card", queen: queen%>
-      <a href="#" class="edit-link">Edit</a>
+      <%= link_to "Edit", edit_queen_path, class:"edit-link" %>
+      <%# <a href="#" class="edit-link">Edit</a> %>
     <% end %>
 
 
