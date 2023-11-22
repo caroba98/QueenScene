@@ -10,4 +10,5 @@ class User < ApplicationRecord
         #  validates :address, presence: true
         #  validates :phone, presence: true
          validates :email, presence: true
+         enum role: [:queen, :booker]
 end
