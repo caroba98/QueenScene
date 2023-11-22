@@ -2,7 +2,17 @@ class QueensController < ApplicationController
   before_action :set_queen, only: [:show, :edit, :update]
   def index
     @queens = Queen.all
+    if params[:search].present?
+      @queens = @queens.where("location ILIKE ?", "%#{params[:search][:location]}%") if params[:search][:location].present?
+
+      if params[:search][:skills].present?
+        skill = params[:search][:skills]
+        @queens = @queens.where("skills LIKE ?", "%#{skill}%")
+      end
+    end
   end
+
+
 
   def show
     @queen = Queen.find(params[:id])
