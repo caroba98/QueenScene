@@ -1,10 +1,10 @@
 <div class="card">
       <%= link_to queen_path(queen) do %>
-      <%= image_tag "https://source.unsplash.com/random/300x300?sig=#{queen.id}", alt: "#{queen.name}'s photo", class: "card-img-top" %>
+      <%= image_tag "https://source.unsplash.com/random/?dragqueen=#{queen.id}", alt: "#{queen.name}'s photo", class: "card-img-top" %>
         <div class="card-body">
           <h5 class="card-title"><%= queen.name %></h5>
           <h6 class="card-detail"><i class="fa-solid fa-location-dot"></i> <%= queen.location %></h6>
-          <h6 class="card-detail"><i class="fa-solid fa-tag"></i> <%= queen.price %> <b>$</b></h6>
+          <h6 class="card-detail"><i class="fa-solid fa-tag"></i><b> <%= queen.price %> $ </b>/ hour</h6>
 
           <div class="card-skills">
             <% queen.skills.split(',').each do |skill| %>
