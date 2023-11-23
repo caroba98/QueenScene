@@ -25,10 +25,11 @@ class QueensController < ApplicationController
 
   def create
     @queen = Queen.new(queen_params)
+    @queen.user = current_user
     if @queen.save
-      redirect_to queen_path(@queen), notice: 'Drag Queen profile created successfully. Work Bitch! '
+      redirect_to dashboard_path, notice: 'Drag Queen profile created successfully. Work Bitch! '
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

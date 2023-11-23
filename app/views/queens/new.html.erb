@@ -1,14 +1,32 @@
-<h1>Create Your Fabulous and Fierce Profile</h1>
-
+<div class="container-fluid py-4">
+  <div class="d-flex justify-content-left" >
+<%= link_to 'Nevermind, BRING ME BACK', queens_path, class: "button-75 btn-small"%>
+</div>
+  <div class="row ">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <div class="card-title text-center">
+        <p>✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨</p>
+        <h3 >Create Your Fabulous & Fierce Profile</h3>
+        <p>✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨🔥✨</p>
+        </div>
 <%= simple_form_for @queen do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :price %>
+  <%= f.input :name, placeholder: 'Whats your Queen Name' %>
+  <%= f.input :location, placeholder: 'Where can we find you?' %>
+  <%= f.input :bio, placeholder: 'Tell us something about yourself...' %>
+   <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Choose a Skill!" %>
+  <%= f.input :price, placeholder: 'How much do you cost? 🤑' %>
+  <%# <%= f.input :imageUrl, placeholder: 'Add an image URL' %>
 <%# dropdown: %>
-  <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Select a Skill" %>
+
 
 <%# checklist: %>
 <%# <%= f.input :skills, as: :check_boxes, collection: Queen::SKILLSET, label_method: :capitalize, value_method: :downcase, include_hidden: false %>
-  <%= f.button :submit, "Create Profile", class: "button btn-primary" %><br>
+<div class="d-grid col-6 mx-auto">
+  <%= f.submit "Lets get it started", class: "button-75" %><br>
+  </div>
   <% end %>
-    <%= link_to 'Back to Index', queens_path %>
+          </div>
+    </div>
+  </div>
+</div>
