@@ -135,15 +135,17 @@ bios = [
 ]
 
 drag_queen_names.each_with_index do |name, index|
+  skills_sample = Queen::SKILLSET.sample(rand(2..3)).join(', ')
   Queen.create!(
     name: name,
     location: city_names[index % city_names.length],
     price: rand(50..1000),
     bio: bios[index % bios.length],
-    skills: Queen::SKILLSET.sample,
+    skills: skills_sample,
     user_id: user.id
   )
   puts "#{Queen.last.name} created"
 end
+
 
 puts "Created #{Queen.count} drag queens."
