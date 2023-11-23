@@ -35,10 +35,10 @@ city_names = [
 ]
 
 bios = [
-  "Cara Mystique - A queen of enigma, turning heads with her mysterious allure and a wardrobe to die for. Known for her spellbinding performances that leave the crowd enchanted.",
-  "Honey Blaze - She's the firecracker of the drag world, lighting up the stage with her explosive charisma and fiery dance moves that can outshine any firework display.",
-  "Bianca Pout - The ultimate diva of the pout and pose. Her lips are as bold as her fashion sense, and she can sass you with a glance and awe you with a smirk.",
-  "Samantha Marvel - A superhero in heels, she saves the world one sequin at a time. Her superpower? Dazzling the audience with her spectacular shows and heart of gold.",
+  "A queen of enigma, turning heads with her mysterious allure and a wardrobe to die for. Known for her spellbinding performances that leave the crowd enchanted.",
+  "She's the firecracker of the drag world, lighting up the stage with her explosive charisma and fiery dance moves that can outshine any firework display.",
+  "The ultimate diva of the pout and pose. Her lips are as bold as her fashion sense, and she can sass you with a glance and awe you with a smirk.",
+  "A superhero in heels, she saves the world one sequin at a time. Her superpower? Dazzling the audience with her spectacular shows and heart of gold.",
   "A tropical storm of fun and flair, she's known for her unpredictable humor and whirlwind performances that are as refreshing as a cool breeze on a hot summer day.",
   "She's the queen of sass, with a witty comeback always at the ready. Aly turns every catwalk into a comedy show and every show into a fierce fashion statement.",
   "Shining brighter than a disco ball, Adele lights up every room with her sparkling personality and dazzling performances that are a feast for the senses.",
