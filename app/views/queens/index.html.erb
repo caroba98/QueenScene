@@ -9,11 +9,6 @@
   </div>
   <%= f.button :submit, 'SEARCH', class: 'btn btn-search' %>
 <% end %>
-
-<div class="d-grid gap-2 col-4 mx-auto">
-<%= link_to "Or create New Profile", new_queen_path, class: "btn btn-primary mb-3" %>
-</div>
-
 <div class="queen-cards">
   <% @queens.each do |queen| %>
 <%=render "card", queen: queen %>
