@@ -6,5 +6,5 @@ class Queen < ApplicationRecord
   validates :name, uniqueness: true
   validates :location, presence: true
   validates :price, presence: true
-  validates :skills, inclusion: { in: SKILLSET }
+  # validates :skills, inclusion: { in: SKILLSET }
 end
