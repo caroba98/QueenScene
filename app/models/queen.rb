@@ -13,4 +13,5 @@ class Queen < ApplicationRecord
   using: {
   tsearch: { prefix: true }
   }
+  # validates :skills, inclusion: { in: SKILLSET }
 end

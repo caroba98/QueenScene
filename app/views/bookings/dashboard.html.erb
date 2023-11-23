@@ -1,4 +1,5 @@
 <div class="dashboard">
+
   <h1 class="text-center">Hi, <%= @user.email %>! </h1>
   <h2 class="text-center">Welcome to your Dashboard </h1>
   <p class="text-center">Here you have an overview of all you upcoming events: </p>
@@ -17,14 +18,16 @@
       </div>
     <% end %>
 
-    <h2>Your Queen Profile</h2>
-    <% @queens.each do | queen | %>
-      <%= render "card", queen: queen%>
-      <%= link_to "Edit", edit_queen_path, class:"edit-link" %>
-      <%# <a href="#" class="edit-link">Edit</a> %>
-    <% end %>
+  <h2>Your Queen Profile</h2>
+  <div class="row">
+    <div class="queen-cards col-md-4" style="width: 400px;">
+      <% @queens.each do | queen | %>
+        <%= render "queens/card", queen: queen%>
+        <a href="<%= edit_queen_path(queen) %>" class="button-39">Edit Queen</a>
+      <% end %>
 
+    </div>
+    </div>
 
   </div>
-
 </div>

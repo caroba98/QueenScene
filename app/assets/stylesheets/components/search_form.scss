@@ -1,20 +1,3 @@
-.search-form {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-
-  .form-top {
-    align-items: center;
-  }
-
-    .btn-search {
-        height: 40px;
-        @extend .button-75 !optional;
-    }
-}
-
 @media (max-width: 768px) {
     .search-form .search-fields {
         flex-direction: column;
