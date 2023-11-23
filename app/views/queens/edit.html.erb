@@ -1,16 +1,25 @@
-<h1>Edit your gorgeous profile</h1><br>
-<%= link_to 'Back to Profile', queen_path(@queen), class: 'btn btn-secondary' %>
+<div class="container-fluid py-4">
+  <div class="d-flex justify-content-left" >
+    <%= link_to 'Back to Profile', queen_path(@queen), class: 'button-75' %>
+  </div>
+  <div class="row ">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <div class="card-title text-center">
+          <h1>Edit your gorgeous profile</h1><br>
+        </div>
 
-<%= simple_form_for @queen do |f| %>
-  <%= f.input :name %>
-  <%= f.input :location %>
-  <%= f.input :price %>
-  <%
-=begin%>
- <%= f.input :skills, as: :check_boxes, collection: Queen::SKILLSET, label_method: :capitalize, value_method: :downcase, include_hidden: false %>
-<%
-=end%>
-  <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Select a Skill" %>
-
-  <%= f.button :submit, "you better update your Profile, Bitch!", class: 'btn btn-primary'  %>
-<% end %>
+  <%= simple_form_for @queen do |f| %>
+    <%= f.input :name, placeholder: 'Whats your Queen Name' %>
+    <%= f.input :location, placeholder: 'Moved where?' %>
+    <%= f.input :bio, placeholder: 'Tell us something about yourself...' %>
+    <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Choose a new Skill!" %>
+    <%= f.input :price, placeholder: 'Gimme more 🤑' %>
+    <div class="d-grid mx-auto">
+      <%= f.button :submit, "you better update your Profile, Bitch!", class: 'button-75'  %>
+    </div>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</div>
