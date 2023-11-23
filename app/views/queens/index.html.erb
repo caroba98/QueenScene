@@ -9,8 +9,6 @@
   </div>
   <%= f.button :submit, 'SEARCH', class: 'btn btn-search' %>
 <% end %>
-
-
 <div class="queen-cards">
   <% @queens.each do |queen| %>
 <%=render "card", queen: queen %>

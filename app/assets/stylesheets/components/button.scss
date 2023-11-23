@@ -43,6 +43,7 @@ html {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
 }
 
 .button-36:hover {
@@ -55,7 +56,10 @@ html {
     padding: 0 2.6rem;
   }
 }
-
+.button-36 {
+  width: 100%;
+  display: block;
+}
 
 // Button 75
 
@@ -90,6 +94,7 @@ html {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  cursor: pointer;
 }
 
 .button-75:active {
