@@ -3,15 +3,15 @@ class QueensController < ApplicationController
   def index
     @queens = Queen.all
     if params[:search].present?
-      @queens = @queens.where("location ILIKE ?", "%#{params[:search][:location]}%") if params[:search][:location].present?
-
-      if params[:search][:skills].present?
-        skill = params[:search][:skills]
+      sql_subquery = "name @@ :search OR location @@ :search"
+      @queens = @queens.where(sql_subquery, search: "%#{params[:search]}%")
+    end
+    if params[:skills].present?
+      params[:skills][1..].each do |skill|
         @queens = @queens.where("skills LIKE ?", "%#{skill}%")
       end
     end
   end
-
 
 
   def show

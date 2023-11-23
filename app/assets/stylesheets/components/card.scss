@@ -9,8 +9,13 @@
         border-radius: 10px; // Elegant, modern border-radius
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // subtle shadow for depth
         transition: transform 0.3s ease;
+        background-color: #FD96CE;
+        border-color:#8300A4;
+        color: #8300A4 ;
         &:hover {
             transform: scale(1.05); // Slightly grow on hover for effect
+            background-color: #E70A74;
+            color: white;
         }
         a {
             // Targeting links inside the card
@@ -31,10 +36,10 @@
             .card-title,
             .card-detail {
                 margin-bottom: 10px;
-                color: black; // Change the color as needed
+                color: #8300A4; // Change the color as needed
                 text-decoration: none; // Removes underline from text
                 &:hover {
-                    color: black; // Ensures the color remains the same on hover
+                    color: white; // Ensures the color remains the same on hover
                 }
             }
             .card-detail {
@@ -43,8 +48,10 @@
             }
         }
         .card-skills .badge {
-            background-color: #007bff; // Example background color
-            color: white; // Text color
+            background-color: #00E8DA; // Example background color
+            color: #8300A4; // Text color
+            border-width: 2px;
+            border-color:#8300A4;
             padding: 5px 10px; // Padding inside the badge
             border-radius: 5px; // Rounded corners
             margin-right: 5px; // Space between badges
