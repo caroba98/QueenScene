@@ -9,7 +9,11 @@
         <p><strong><%= @queen.location %></strong></p>
         <p><strong><i class="fa-solid fa-tag"></i> <%= @queen.price %>€/hour</strong></p>
       </div>
-      <p><strong>Skills:</strong></p>
+
+
+      <%
+=begin%>
+ <p><strong>Skills:</strong></p>
       <% if @queen.skills == "dancing" %>
       <p><%= "🪩 #{@queen.skills}"  %></p>
       <% elsif @queen.skills == "singing" %>
@@ -21,6 +25,31 @@
       <% elsif @queen.skills == "looks" %>
       <p><%= "💅 #{@queen.skills}"  %></p>
       <% end %>
+<%
+=end%>
+
+  <p><strong>Skills:</strong></p>
+  <% @queen.skills.split(', ').each do |skill| %>
+    <p>
+      <% case skill %>
+      <% when "dancing" %>
+        <%= "🪩 #{skill}" %>
+      <% when "singing" %>
+        <%= "🎵 #{skill}" %>
+      <% when "lipsync" %>
+        <%= "🎤 #{skill}" %>
+      <% when "comedy" %>
+        <%= "😂 #{skill}" %>
+      <% when "looks" %>
+        <%= "💅 #{skill}" %>
+      <% else %>
+      <%= skill %>
+      <% end %>
+    </p>
+  <% end %>
+
+
+
     </div>
 
     <div class="card-form col-lg-4 col-md-4 col-sm-12 p-3">
