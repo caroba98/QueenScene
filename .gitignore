@@ -39,3 +39,5 @@
 
 # .gitignore
 node_modules/
+.env*
+.env*
