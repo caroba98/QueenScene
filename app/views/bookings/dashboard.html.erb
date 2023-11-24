@@ -1,8 +1,8 @@
 <div class="dashboard">
 
-  <h1 class="text-center">Hi, <%= @user.name %>! </h1>
+  <h2 class="text-center">Hi, <%= @user.name %>! </h2>
 
-  <h2 class="text-center">Welcome to your Dashboard </h1>
+  <h1 class="text-center">Welcome to your Dashboard </h1>
   <p class="text-center">Here you have an overview of all you upcoming events: </p>
 
 
@@ -11,7 +11,7 @@
     <% @bookings.each do |booking|%>
       <div class="booking-card">
         <div class="card-body">
-          <h5 class="card-title">Booking 1</h5>
+          <h5 class="card-title">Your Booking with <%= booking.queen.name %>: </h5>
           <p class="card-text">Date: <%= booking.date%></p>
           <p class="card-text">Location: <%= booking.location%></p>
           <p class="card-text">Status: <%= booking.status%></p>
@@ -19,15 +19,33 @@
       </div>
     <% end %>
 
-  <h2>Your Queen Profile</h2>
-  <div class="row">
-    <div class="queen-cards col-md-4" style="width: 400px;">
-      <% @queens.each do | queen | %>
-        <%= render "queens/card", queen: queen%>
-        <a href="<%= edit_queen_path(queen) %>" class="button-39">Edit Queen</a>
-      <% end %>
+    <% if flash[:success] %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= flash[:success] %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+          <h2>Your Queen Profile</h2>
+        </div>
+        <div class="col-md-2">
+          <b><%= link_to "Gimme more", new_queen_path, class: "button-75 md-2" %></b>
+        </div>
+      </div>
     </div>
+
+
+
+    <div class="row">
+      <% @queens.each do | queen | %>
+        <div class="queen-cards col-md-4" style="width: 400px;">
+          <%= render "queens/card", queen: queen%>
+          <a href="<%= edit_queen_path(queen) %>" class="button-39">Edit Queen</a>
+        </div>
+      <% end %>
     </div>
 
   </div>

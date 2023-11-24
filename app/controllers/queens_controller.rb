@@ -27,7 +27,8 @@ class QueensController < ApplicationController
     @queen = Queen.new(queen_params)
     @queen.user = current_user
     if @queen.save
-      redirect_to dashboard_path, notice: 'Drag Queen profile created successfully. Work Bitch! '
+      flash[:success] = 'Drag Queen profile created successfully. Work Bitch!'
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -39,7 +40,8 @@ class QueensController < ApplicationController
 
   def update
     if @queen.update(queen_params)
-      redirect_to queen_path(@queen), notice: 'Yass Queen! Profile updated successfully.'
+      flash[:success] = 'Yass Queen! Profile updated successfully'
+      redirect_to dashboard_path
     else
       render :edit
     end
