@@ -136,7 +136,7 @@ bios = [
 
 drag_queen_names.each_with_index do |name, index|
   skills_sample = Queen::SKILLSET.sample(rand(2..3)).join(', ')
-  Queen.create!(
+  queen = Queen.new(
     name: name,
     location: city_names[index % city_names.length],
     price: rand(50..1000),
@@ -144,6 +144,8 @@ drag_queen_names.each_with_index do |name, index|
     skills: skills_sample,
     user_id: user.id
   )
+  queen.photo.attach
+  queen.save
   puts "#{Queen.last.name} created"
 end
 

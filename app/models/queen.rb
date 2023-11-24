@@ -12,5 +12,6 @@ class Queen < ApplicationRecord
   using: {
   tsearch: { prefix: true }
   }
+  has_one_attached :photo
   # validates :skills, inclusion: { in: SKILLSET }
 end

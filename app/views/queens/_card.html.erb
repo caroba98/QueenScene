@@ -1,6 +1,10 @@
 <div class="card">
       <%= link_to queen_path(queen) do %>
-      <%= image_tag "https://source.unsplash.com/random/?dragqueen=#{queen.id}", alt: "#{queen.name}'s photo", class: "card-img-top" %>
+      <% if queen.photo.attached? %>
+        <%= cl_image_tag queen.photo.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+      <% else %>
+        <%= image_tag "https://source.unsplash.com/random/?dragqueen=#{queen.id}", alt: "#{queen.name}'s photo", class: "card-img-top" %>
+      <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= queen.name %></h5>
           <h6 class="card-detail"><i class="fa-solid fa-location-dot"></i> <%= queen.location %></h6>
