@@ -14,8 +14,8 @@
   <%= f.input :name, placeholder: 'Whats your Queen Name' %>
   <%= f.input :location, placeholder: 'Where can we find you?' %>
   <%= f.input :bio, placeholder: 'Tell us something about yourself...' %>
-   <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Choose a Skill!" %>
-  <%= f.input :price, placeholder: 'How much do you cost? 🤑' %>
+   <%= f.input :skills, collection: Queen::SKILLSET %>
+  <%= f.input :price, placeholder: 'How much do you cost per hour? 🤑' %>
   <%# <%= f.input :imageUrl, placeholder: 'Add an image URL' %>
 <%# dropdown: %>
 
