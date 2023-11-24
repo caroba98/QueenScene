@@ -77,5 +77,11 @@
   padding: 2em;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to left top, #E70A74, #f7c5e1);
-}
+ background-color: #FD96CE;
+        border-color:#8300A4;
+        color: #8300A4 ;
+        &:hover {
+            transform: scale(1.05); // Slightly grow on hover for effect
+            background-color: #E70A74;
+            color: white;
+}}
