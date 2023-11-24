@@ -16,6 +16,7 @@
   <%= f.input :bio, placeholder: 'Tell us something about yourself...' %>
    <%= f.input :skills, collection: Queen::SKILLSET, prompt: "Choose a Skill!" %>
   <%= f.input :price, placeholder: 'How much do you cost? 🤑' %>
+  <%= f.input :photo, as: :file %>
   <%# <%= f.input :imageUrl, placeholder: 'Add an image URL' %>
 <%# dropdown: %>
 

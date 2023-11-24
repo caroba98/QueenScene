@@ -6,12 +6,12 @@ class Queen < ApplicationRecord
   validates :name, uniqueness: true
   validates :location, presence: true
   validates :price, presence: true
-  # validates :skills, inclusion: { in: SKILLSET }
   include PgSearch::Model
   pg_search_scope :search_by_name_and_location,
   against: [ :name, :location ],
   using: {
   tsearch: { prefix: true }
   }
+  has_one_attached :photo
   # validates :skills, inclusion: { in: SKILLSET }
 end

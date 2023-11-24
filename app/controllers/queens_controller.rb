@@ -52,6 +52,6 @@ class QueensController < ApplicationController
   end
 
   def queen_params
-    params.require(:queen).permit(:name, :location, :price, :skills)
+    params.require(:queen).permit(:name, :location, :price, :skills, :photo)
   end
 end
