@@ -10,13 +10,22 @@
   flex-grow: 0;
 }
 
+.navbar-lewagon .nav-link {
+  font-family: Bebas Neue;
+  font-size: 1.5em;
+}
 .navbar-lewagon .navbar-brand img {
   width: 50px;
+  font-size: 1.5em;
+      font-weight: bold;
 }
 .navbar-lewagon {
   background: linear-gradient(to right, #E70A74, #f7c5e1);
   padding: 15px 20px;
   justify-content: space-between;
+  box-shadow: 0px 4px 10px #8300A4; /* Add a subtle box shadow */
+  border-bottom: 2px solid #8300A4;
+
 }
 
 .navbar-lewagon a {
@@ -24,9 +33,11 @@
   margin-right: 20px;
   color: #8300A4;
   font-weight: bolder;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-lewagon a:hover {
   text-decoration: underline;
   color: #8300A4;
+  transform: scale(1.1);
 }
