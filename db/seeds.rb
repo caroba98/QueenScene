@@ -144,7 +144,6 @@ drag_queen_names.each_with_index do |name, index|
     skills: skills_sample,
     user_id: user.id
   )
-  queen.photo.attach
   queen.save
   puts "#{Queen.last.name} created"
 end
