@@ -12,7 +12,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.queen = @queen
     if @booking.save
-      redirect_to dashboard_path, notice: 'Booking created successfully. Party Bitch! '
+      flash[:success] = 'Booking created successfully. Party Bitch!'
+      redirect_to dashboard_path
     else
       render "queens/show", status: :unprocessable_entity
     end

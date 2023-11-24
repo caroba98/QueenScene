@@ -4,14 +4,14 @@
 
   .card-db {
     border: 1px solid #8300A4;
-    background-color: #D9D9D9;
+    border-radius: 10px;
     color: #8300A4;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 50px;
 
-  .booking-card {
+    .booking-card {
       border: 1px solid #8300A4;
       background: #FD96CE;
       color: #8300A4 !important;
@@ -24,16 +24,16 @@
         font-weight: bold;
         color: #8300A4;
         font-size: 1.5em;
-
       }
 
     .card-text {
         color:#8300A4;
-        font-size: 12px;
         line-height: 1.4;
         opacity: .7;
         margin-bottom: 0;
         margin-top: 8px;
+        font-size: 14px;
+        font-weight: bold;
             }
     }
   }
