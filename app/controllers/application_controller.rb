@@ -8,4 +8,16 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
+
+  def create
+    # Your login logic here
+    if user_authenticated_successfully
+      flash[:notice] = 'Login successful!'
+      redirect_to root_path
+    else
+      flash[:alert] = 'Login failed. Please check your credentials.'
+      render :new
+    end
+  end
+  
 end
