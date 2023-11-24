@@ -1,23 +1,19 @@
-<%# <div class="bg-success" style="--bs-bg-opacity: .5;height: 100vh"> %>
-<%# <%# <div class="d-flex justify-content-center"> %>
 <div class="background-home">
-<div class="intro">
-<div class="d-flex justify-content-center">
-  <%= image_tag "Logo.png", style: 'height:200px; width:auto;' %>
-  <%# <%# </div> %>
-</div>
+  <div class="intro text-center">
+    <%= image_tag "Logo.png", style: 'height:200px; width:auto; margin-bottom: 20px;' %>
+    <h1 class="my-2">MAKE YOUR PARTY (T)WERK</h1>
 
-<h1 class="d-flex justify-content-center my-2">MAKE YOUR PARTY (T)WERK</h1>
-<div class="row">
-  <div class="col"></div>
-  <div class="col">
-    <b><a href=""><%= link_to "FIND YOUR QUEEN", queens_path, class: "button-36 p-4" %></b></a>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <b><%= link_to "FIND YOUR QUEEN", queens_path, class: "button-36 p-4 btn btn-primary btn-lg full-width-button mb-4" %></b>
+      </div>
+    </div>
+
+    <h2 class="my-3">Or are you a queen yourself?</h2>
+
+    <div class="d-grid gap-2 col-3 mx-auto">
+      <b><%= link_to "Create your profile", new_queen_path, class: "button-75 btn btn-secondary btn-lg btn-block text-start" %></b>
+    </div>
+
   </div>
-  <div class="col"></div>
-</div>
-<h2 class="d-flex justify-content-center my-2">Or are you a queen yourself?</h2>
-<div class="d-grid gap-2 col-3 mx-auto">
-  <b><%= link_to "Create your profile", new_queen_path, class: "button-75 mb-5" %></b>
-</div>
-</div>
 </div>
