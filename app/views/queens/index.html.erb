@@ -1,18 +1,54 @@
+<div class="container">
+  <h1 class="text-center">Find the perfect Drag Queen for your event!</h1><br>
 
-<h1 class="text-center mt-5 mb-3"><b>Find the perfect Drag Queen for your event!</b></h1><br>
+  <div class="d-flex justify-content-center search">
+    <%= form_with url: queens_path, method: :get do |form|%>
+      <div>
+        <div class="d-flex justify-content-start mb-1">
 
-<%= simple_form_for :search, url: queens_path, method: :get, html: { class: 'search-form' } do |f| %>
-  <div class="search-fields">
-    <%= f.input :location, as: :string, label: false, placeholder: 'Location', input_html: { class: 'form-control' } %>
-    <%= f.input :date, as: :string, label: false, placeholder: 'Date', input_html: { class: 'form-control', type: 'date' } %>
-    <%= f.input :skills, label: false, collection: Queen::SKILLSET, input_html: { class: 'form-control', multiple: false }, prompt: 'Select skill' %>
+            <!--Search Field-->
+            <%= text_field_tag :search,
+                  params[:search],
+                  class: "form-control",
+                  placeholder: "City, Drag Queen, ..."
+            %>
+
+            <!--Date Field-->
+            <%= date_field :date,
+                class: "form-control"
+            %>
+
+        </div>
+        <div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="check">
+
+                <!--Skill List-->
+
+                <%= form.collection_check_boxes :skills,
+                    Queen::SKILLSET.each_with_index.map { |s, i| [i, s] },
+                    :last, :last,
+                    class: "form-control"
+                %>
+
+
+            </div>
+
+            <!--Button to Submit-->
+
+            <%= button_tag(type: 'submit', class: 'button-75') do %>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <%= f.button :submit, 'SEARCH', class: 'btn btn-search' %>
-<% end %>
 
-
-<div class="queen-cards">
-  <% @queens.each do |queen| %>
-<%=render "card", queen: queen %>
-  <% end %>
+  <div class="queen-cards">
+    <% @queens.each do |queen| %>
+  <%=render "card", queen: queen %>
+    <% end %>
+  </div>
 </div>

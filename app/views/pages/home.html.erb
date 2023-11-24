@@ -2,16 +2,18 @@
 <%# <%# <div class="d-flex justify-content-center"> %>
 <div class="mt-5 d-flex justify-content-center">
   <%= image_tag "Logo.png" %>
-<%# <%# </div> %>
-</div> 
+  <%# <%# </div> %>
+</div>
 
 <h1 class="d-flex justify-content-center my-2">MAKE YOUR PARTY (T)WERK</h1>
-<div class="d-grid gap-2 col-4 mx-auto">
-<button class="button-36 p-4 " role="button"><b><%= link_to "FIND YOUR QUEEN", queens_path %></b></button>
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+    <b><a href=""><%= link_to "FIND YOUR QUEEN", queens_path, class: "button-36 p-4" %></b></a>
+  </div>
+  <div class="col"></div>
 </div>
-<h2 class="d-flex justify-content-center my-2">Are you a queen yourself?</h2>
+<h2 class="d-flex justify-content-center my-2">Or are you a queen yourself?</h2>
 <div class="d-grid gap-2 col-3 mx-auto">
-<button class="button-75 mb-5" role="button" ><b><%= link_to "Create your profile", new_queen_path %></b></button>
-</div>
-
+  <b><%= link_to "Create your profile", new_queen_path, class: "button-75 mb-5" %></b>
 </div>
